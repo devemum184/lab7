@@ -1,0 +1,140 @@
+/* Общие стили */
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили шапки */
+.header {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для страницы архива (главной) */
+.archive .header {
+    justify-content: center;
+}
+
+.blog-name {
+    background: #0e7a65;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.all-posts-link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+/* Контент */
+.content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Стили для страницы одной статьи */
+.article .post-title-main {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.article .article-text-full {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+/* Стили для страницы архива (списка статей) */
+.archive .one-post {
+    margin-top: 30px;
+}
+
+.archive .post-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.archive .post-title a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Общие стили для информации об авторе и дате */
+.article-info {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.article-created-date {
+    text-align: right;
+    font-size: 14px;
+}
+
+.article-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Стили для форм */
+.post-form input[type="text"],
+.post-form input[type="email"],
+.post-form input[type="password"],
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Tahoma, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.post-form textarea {
+    height: 200px;
+    resize: vertical;
+}
+
+.post-form input[type="submit"] {
+    background: #0e7a65;
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form input[type="submit"]:hover {
+    background: #0a5c4d;
+}
+
+/* Стили для сворачивания постов */
+.one-post.folded .article-author,
+.one-post.folded .article-created-date,
+.one-post.folded .article-text {
+    display: none;
+}

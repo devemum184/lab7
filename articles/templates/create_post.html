@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Public Blog - создать статью</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
+</head>
+<body class="article">
+    <div class="header">
+        <div class="header-left">
+            <span class="blog-name">Django public blog</span>
+        </div>
+        <div class="header-right">
+            {% if user.is_authenticated %}
+                <span class="all-posts-link">Вы вошли как {{ user.username }}</span>
+                <a href="{% url 'logout' %}" class="all-posts-link">Выйти</a>
+            {% else %}
+                <a href="{% url 'register' %}" class="all-posts-link">Регистрация</a>
+                <a href="{% url 'login' %}" class="all-posts-link">Войти</a>
+            {% endif %}
+            <a href="/" class="all-posts-link">Все статьи</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Написать статью</h1>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Название статьи" value="{{ form.title }}">
+            <textarea name="text" placeholder="Текст статьи">{{ form.text }}</textarea>
+            <input type="submit" value="Сохранить">
+        </form>
+        {{ form.errors }}
+    </div>
+</body>
+</html>
